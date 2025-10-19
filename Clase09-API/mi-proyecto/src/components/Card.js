@@ -5,21 +5,20 @@ function Card(props) {
   return (
     <View style={styles.card}>
       <Image source={{ uri: props.product.image }} style={styles.image} />
-      <Text>{props.product.title}</Text>
-      <Text>${props.product.price}</Text>
-      <Text>{props.product.description}</Text>
-      <Text>Categoría: {props.product.category}</Text>
+      <Text>{props.product.name}</Text>
+      <Text>{props.product.species}</Text>
+      <Text>{props.product.gender}</Text>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   card: {
+    flex: 1,
     backgroundColor: '#f9f9f9',
     padding: 15,
     borderRadius: 10,
     marginVertical: 10,
-    elevation: 3,
   },
   image: {
     width: '100%',

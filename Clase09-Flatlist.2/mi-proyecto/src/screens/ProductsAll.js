@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { FlatList} from 'react-native-web';
-import { StyleSheet, Text, View } from 'react-native';
+import { FlatList, StyleSheet, Text, View } from 'react-native';
 import Card from '../components/Card';
 
 class ProductsAll extends Component {
@@ -117,13 +116,12 @@ class ProductsAll extends Component {
 
     render() {
         return(
-            <View>
+            <View style={styles.container}>
                 <Text style={styles.text}>Lista de productos</Text>
                 <FlatList
                     data={this.state.products}
                     keyExtractor={(item) => item.id.toString()}
-                    renderItem={ ({item}) => <Text style={styles.item}> {item.title} </Text>}/>
-                <Card products={this.state.products} />
+                    renderItem={ ({item}) => <Card product={item} /> } />
             </View>
         )
     }
